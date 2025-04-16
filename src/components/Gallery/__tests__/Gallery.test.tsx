@@ -28,7 +28,7 @@ describe('Gallery', () => {
 
   it('Should fire onClick with the correct id when clicking on the image', () => {
     render(<Gallery companies={companies} onClick={mockOnClick} />);
-    const imageLink = screen.getByRole('link');
+    const imageLink = screen.getByTestId('gallery-1');
     fireEvent.click(imageLink);
     expect(mockOnClick).toHaveBeenCalledWith('1');
   });

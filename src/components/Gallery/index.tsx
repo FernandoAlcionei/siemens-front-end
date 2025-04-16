@@ -40,8 +40,9 @@ const Gallery = ({ companies, onClick, selectedItem }: Props) => {
       <div className="flex items-center justify-center gap-1 w-full">
         {filteredCompanies.map((company) => (
           <a
+            data-testid={`gallery-${company.id}`}
             key={company.id}
-            href="javascript:void(0)"
+            href="#"
             onClick={() => onClick(company.id)}
             className={classNames('hover:opacity-90 hover:cursor-pointer rounded-lg border-2 border-transparent hover:border-blue-300 overflow-hidden', {
               '!border-blue-400': selectedItem == company.id
